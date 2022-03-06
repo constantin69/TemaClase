@@ -1,7 +1,7 @@
 import java.util.*;
 import java.util.stream.IntStream;
 
-public class Main {
+public class Main<capmediu, cap, c, putereMax, putere> {
     public static void main(String[] args) {
 
         int n = 20;
@@ -68,6 +68,23 @@ public class Main {
         System.out.println("Pretul mediu al aparatelor frigorifice este : " + mediu);
         System.out.println();
 
+
+        int c = 0;
+        int cap = 0;
+        int capmediu = 0;
+        for (int i = 0;i < n;i++) {
+            if ((aparate[i] instanceof AparatFrigorific) && !(aparate[i] instanceof FrigiderSidebySide) && !(aparate[i] instanceof LadaFrigorifica) && !(aparate[i] instanceof Congelator)&& !(aparate[i] instanceof Frigider)){
+                cap += aparate[i].capacitate;
+                c += 1;
+            }
+        }
+        capmediu = cap / c;
+
+
+        System.out.println("Capacitatea medie al aparatelor frigorifice este : " + capmediu + " W");
+        System.out.println();
+
+
         System.out.print("Introduceti pretul minim :");
         x = new Scanner(System.in).nextInt();
         System.out.print("\n");
@@ -87,22 +104,21 @@ public class Main {
         }
         System.out.print("\n");
 
-        /*
+
         int nrPutere = 0;
         for (int i = 0;i < n;i++) {
             if (aparate[i] instanceof LadaFrigorifica) {
                 if (aparate[i].putere > putereMax) {
-                    System.out.println("Lada frigorifica cu puterea de " + puterea.putere + " W");
+                    System.out.println("Lada frigorifica cu puterea de " + aparate[i].putere + " W");
                     System.out.print("\n");
                     nrPutere++;
                 }
             }
+
         }
-
-
         System.out.println("Numarul de lazi frigorifice cu puterea mai mare de " + putereMax + " W sunt: " + nrPutere + " lazi");
-        //System.out.print("\n");
-        */
+        System.out.print("\n");
+
 
     }
 }

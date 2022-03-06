@@ -2,6 +2,7 @@ public class AparatFrigorific {
     public String producator;
     public int capacitate;
     public int pret;
+    int putere;
 
     AparatFrigorific() {
     }
