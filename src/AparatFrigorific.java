@@ -33,7 +33,8 @@ public class AparatFrigorific {
         int p = 0;
         double mediu = 0.0;
         for (int i = 0;i < n;i++) {
-            if ((aparate[i] instanceof AparatFrigorific) && !(aparate[i] instanceof FrigiderSidebySide) && !(aparate[i] instanceof LadaFrigorifica) && !(aparate[i] instanceof Congelator)&& !(aparate[i] instanceof Frigider)){
+            //if ((aparate[i] instanceof AparatFrigorific) && !(aparate[i] instanceof FrigiderSidebySide) && !(aparate[i] instanceof LadaFrigorifica) && !(aparate[i] instanceof Congelator)&& !(aparate[i] instanceof Frigider)){
+            if (aparate[i].getClass() == AparatFrigorific){
                 p += aparate[i].pret;
                 j += 1;
             }
