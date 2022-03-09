@@ -40,10 +40,12 @@ public class Main<capmediu, cap, c, putereMax, putere> {
         int nrLazi = 0;
         int nrFrigidere = 0;
         for (int i = 0;i < n;i++) {
-            if (aparate[i] instanceof LadaFrigorifica) {
+            //if (aparate[i] instanceof LadaFrigorifica) {
+            if (aparate[i].getClass() == LadaFrigorifica) {
                 nrLazi++;
             }
-            if ((aparate[i] instanceof Frigider) && !(aparate[i] instanceof FrigiderSidebySide)){
+            //if ((aparate[i] instanceof Frigider) && !(aparate[i] instanceof FrigiderSidebySide)){
+            if ((aparate[i].getClass() == Frigider) && !(aparate[i].getClass() == FrigiderSidebySide)){
                 nrFrigidere++;
             }
         }
@@ -58,7 +60,8 @@ public class Main<capmediu, cap, c, putereMax, putere> {
         int p = 0;
         double mediu = 0.0;
         for (int i = 0;i < n;i++) {
-            if ((aparate[i] instanceof AparatFrigorific) && !(aparate[i] instanceof FrigiderSidebySide) && !(aparate[i] instanceof LadaFrigorifica) && !(aparate[i] instanceof Congelator)&& !(aparate[i] instanceof Frigider)){
+            //if ((aparate[i] instanceof AparatFrigorific) && !(aparate[i] instanceof FrigiderSidebySide) && !(aparate[i] instanceof LadaFrigorifica) && !(aparate[i] instanceof Congelator)&& !(aparate[i] instanceof Frigider)){
+            if (aparate[i].getClass() == AparatFrigorific){
                 p += aparate[i].pret;
                 j++;
             }
@@ -73,7 +76,8 @@ public class Main<capmediu, cap, c, putereMax, putere> {
         int cap = 0;
         int capmediu = 0;
         for (int i = 0;i < n;i++) {
-            if ((aparate[i] instanceof AparatFrigorific) && !(aparate[i] instanceof FrigiderSidebySide) && !(aparate[i] instanceof LadaFrigorifica) && !(aparate[i] instanceof Congelator)&& !(aparate[i] instanceof Frigider)){
+            //if ((aparate[i] instanceof AparatFrigorific) && !(aparate[i] instanceof FrigiderSidebySide) && !(aparate[i] instanceof LadaFrigorifica) && !(aparate[i] instanceof Congelator)&& !(aparate[i] instanceof Frigider)){
+            if (aparate[i].getClass() == AparatFrigorific) {
                 cap += aparate[i].capacitate;
                 c += 1;
             }
@@ -94,7 +98,7 @@ public class Main<capmediu, cap, c, putereMax, putere> {
 
         for (int i = 0;i < n;i++) {
             AparatFrigorific pretul;
-            if (aparate[i] instanceof AparatFrigorific) {
+            if (aparate[i].getClass() == AparatFrigorific) {
                 pretul = aparate[i];
                 if ((pretul.pret > x) && (pretul.pret < X)) {
                     System.out.println("Aparat frigorific are pretul de :" + pretul.pret);
@@ -107,7 +111,7 @@ public class Main<capmediu, cap, c, putereMax, putere> {
 
         int nrPutere = 0;
         for (int i = 0;i < n;i++) {
-            if (aparate[i] instanceof LadaFrigorifica) {
+            if (aparate[i].getClass() == LadaFrigorifica) {
                 if (aparate[i].putere > putereMax) {
                     System.out.println("Lada frigorifica cu puterea de " + aparate[i].putere + " W");
                     System.out.print("\n");
