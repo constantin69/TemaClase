@@ -21,7 +21,7 @@ public class Frigider extends AparatFrigorific{
         int cap = 0;
         float capmediu = 0;
         for (int i = 0;i < n;i++) {
-            if (aparate[i] instanceof Frigider){
+            if (aparate[i].getClass() == Frigider){
                 cap += aparate[i].capacitate;
                 j += 1;
             }
